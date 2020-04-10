@@ -1,0 +1,610 @@
+// Here you can add other styles
+body {
+    font-size: 13px;
+    line-height: 1.1rem;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+
+
+a {
+    color: $color-links;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 400;
+    color: $color-h1;
+}
+
+h2 {
+    color: $color-h2;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+h3 {
+    color: $color-h3;
+    font-weight: 400;
+}
+
+h4 {
+    color: $color-h4;
+    font-weight: 400;
+}
+
+h5 {
+    color: $color-h5;
+    font-weight: 400;
+}
+
+label {
+    font-weight: 700;
+    font-size: 14px;
+}
+table{
+  table-layout: auto !important;
+}
+
+select option{
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  color: #333333;
+}
+
+.table-header__inner{
+  display:none;
+}
+.table-header__inner:first-child{
+  display:table-row;
+
+  td{
+    padding:5px;
+    // background-color: $azul01 !important;
+    color:$azul02;
+    font-weight:bold;
+    text-transform:uppercase;
+  }
+}
+.btn-primary.disabled, .btn-primary:disabled{
+    background-color: $color-third;
+    border-color: $color-third;
+}
+.card {
+    border: none;
+    width: 100%;
+    border-radius:$card-radius;
+    @include card-shadow;
+
+    .card-header {
+        background-color: $color-third;
+        border-bottom: 0;
+        font-size: 20px;
+        color: $color-darkgreen;
+        border-radius: $card-radius $card-radius 0 0;
+        padding-top: 20px;
+
+        .btn{
+            margin-right:10px;
+
+            &.btn-outline-secondary{
+              background-color: $white;
+              border:0;
+
+              &:hover{
+                background-color: $azul02;
+                color:$white;
+                border:0;
+              }
+
+            }
+        }
+    }
+}
+.form-control:focus{
+    border-color: $color-third;
+    box-shadow: 0 0 0 0.2rem rgba(158, 221, 241, 0.5);
+}
+.steps {
+    li {
+        a {
+            font-size: 16px;
+            color: $gray-500;
+            .steps__num {
+                color: $white;
+                background-color: $gray-500;
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                text-align: center;
+                border-radius: 50%;
+                padding-top: 4px;
+            }
+        }
+        .active {
+            color: $color-secondary;
+            .steps__num {
+                background-color: $color-secondary;
+            }
+        }
+    }
+}
+.ui-table{
+  &-wrapper{
+    table{
+      table-layout: auto !important;
+
+      .ui-button{
+        margin-right:10px;
+      }
+    }
+  }
+}
+
+.prime-calendar{
+    .ui-calendar{
+        display: block;
+        .ui-inputtext{
+            width: calc(100% - 33px);
+        }
+        .ui-button{
+            border:0;
+        }
+        .ui-datepicker-month{
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-right:10px;
+        }
+    }
+}
+.opportunityTable tr th:first-child{
+    width:170px;
+}
+
+/* Tablas */
+
+body .ui-table .ui-table-thead > tr > th{
+  color:$azul02 !important;
+//   background-color:$color-fourth !important;
+  font-size: 12px;
+  text-align: center;
+}
+body .ui-table .ui-table-tbody .ui-table table{
+  table-layout:initial !important ;
+}
+body .ui-table .ui-table-tbody > tr > td{
+  font-size:12px !important;
+}
+body .ui-inputtext{
+  font-size:12px !important;
+}
+body .ui-table .ui-table-tbody > tr.ui-state-highlight{
+  background-color:$azul02 !important;
+}
+.ui-table .ui-table-tbody>tr>td.ui-editing-cell{
+  padding:0.571em 0.857em !important;
+}
+body .ui-table .ui-sortable-column.ui-state-highlight{
+  color:$white !important;
+  background-color:$azul02 !important ;
+}
+.ui-dropdown label.ui-dropdown-label{
+  text-overflow: ellipsis;
+}
+.ui-table p-sorticon{
+  display: block;
+}
+/* fin tablas */
+.forms {
+    .forms__subTitle-form {
+        border-bottom: 1px solid $gray-100;
+        padding-bottom: .5rem;
+        margin: 1rem 0;
+    }
+    .forms__ctn-button {
+        border-top: 1px solid $gray-100;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+
+        *{
+            margin-right:10px;
+
+            &:last-child{
+                margin-right:0;
+            }
+        }
+    }
+}
+body .ui-dialog{
+  z-index: 10000 !important;
+}
+
+.no-border
+{
+    border:none
+}
+.checkbox-form{
+    label{
+        margin:0 0 0 5px;
+    }
+}
+.flag{
+  width:48px;
+}
+.ui-table-wrapper{
+  width: 100%;
+  overflow-x:auto;
+}
+
+.title-h2 {
+    border-bottom: 1px solid $gray-100;
+    margin: 1rem 0;
+}
+
+.ctn-step {
+    display: none;
+}
+
+.step-active {
+    display: block;
+}
+
+.ctn-loading {
+    text-align: center;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.text-total-list {
+    font-size: 14px;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.width-50 {
+    width: 50%;
+}
+.width-50-rigth {
+    width: 50%;
+}
+
+.table-list {
+    th {
+        &:last-child {
+            width: 200px;
+        }
+    }
+    .dropdown {
+        display: inline;
+    }
+}
+
+.ctn-errorMessage {
+    text-align: center;
+    .message {
+        text-align: left;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+    }
+}
+
+.btn-marginTop {
+    margin-top: 29px;
+}
+
+.w-14 {
+    width: 12%;
+}
+
+.w-20 {
+    width: 18%;
+}
+
+table {
+    .btn {
+        padding: 0.1rem 0.5rem;
+    }
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+.no-style-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    -webkit-padding-start: 0 !important;
+    -moz-padding-start: 0 !important;
+    -ms-padding-start: 0 !important;
+    -o-padding-start: 0 !important;
+    // li:last-child {
+    //     margin-bottom: 0px;
+    // }
+    // li {
+    //     border-bottom: 1px solid #c2cfd6;
+    //     margin-bottom: 8px;
+    // }
+}
+
+.ui-helper-clearfix{
+  img{
+    height:20px;
+  }
+}
+
+.ui-inputtext{
+  width:100%;
+}
+.homepage h1{
+  font-size:28px;
+  font-weight:bold;
+}
+.homepage img{
+  width:100%;
+  max-width:450px;
+}
+
+.fm-no-border{
+    border:transparent !important;
+    padding-left:0 !important;
+    padding-top:0 !important;
+    width: 100% !important;
+}
+.form-control{
+  border-radius: 5px !important;
+}
+.form-control-feedback {
+  color: #a80903;
+  position: initial;
+  margin-left: 0px;
+  display: inline;
+  text-align: left;
+}
+
+.margin-labels{
+    margin: 10px 0px
+}
+
+.btn{
+    border-radius:5px !important;
+}
+
+.btn-primary {
+    color: $white;
+    background-color: $color-primary;
+    border-color: $color-primary;
+
+    &:hover{
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+
+    &:hover{
+       background-color: $color-primary;
+        border-color: $color-primary;
+    }
+}
+
+.btn-outline-secondary{
+  color: $color-primary;
+  border-color: $color-primary;
+
+  &:hover{
+    background-color:$color-primary;
+    border-color: $color-primary;
+    color:$white;
+  }
+}
+
+.btn-primary:not([disabled]):not(.disabled):active,
+.btn-primary:not([disabled]):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle{
+  color: #fff;
+  background-color: $color-secondary;
+  border-color: $color-secondary;
+  box-shadow: 0 0 0 0.2rem rgba(10, 136, 176, 0.5);
+}
+
+.btn-outline-secondary:not([disabled]):not(.disabled):active,
+.btn-outline-secondary:not([disabled]):not(.disabled).active,
+.show > .btn-outline-secondary.dropdown-toggle{
+    background-color: $color-darkgreen;
+    border-color: $color-darkgreen;
+    box-shadow: 0 0 0 0.2rem rgba(10, 136, 176, 0.5);
+}
+
+.btn-outline-secondary:focus,
+.btn-outline-secondary.focus{
+    box-shadow: 0 0 0 0.2rem rgba(10, 136, 176, 0.5);
+}
+
+.map-btns{
+    button{
+        margin-right:10px !important;
+    }
+}
+
+.taquillas-table {
+    line-height: 1.3em;
+    >thead {
+        >tr {
+            >th {
+                &:first-child{
+                    width: 15%;
+                }
+                &:nth-child(2) {
+                    width: 15%;
+                }
+                &:nth-child(3) {
+                    width: 10%;
+                }
+                &:nth-child(4) {
+                    width: 10%;
+                }
+                &:nth-child(5) {
+                    width: 50%;
+                }
+            }
+        }
+    }
+    select.form-control:not([size]):not([multiple]) {
+        height: auto !important;
+    }
+    .form-control {
+        padding: 0.1rem 0.3rem;
+        font-size: inherit;
+    }
+    .mat-form-field-infix {
+        background-color: $white;
+        width: auto !important;
+        height: auto !important;
+        padding: 3px !important;
+        margin-top: 10px;
+        font-size:12px;
+    }
+    .mat-form-field-wrapper{
+        padding-bottom: 10px;
+    }
+}
+
+.taquillla-alerta {
+    margin: 0px;
+    padding: 0px;
+    >ul{
+        margin: 0px;
+        padding: 8px 16px;
+    }
+}
+
+.sidebar {
+    .nav-dropdown.open {
+        &>.nav-dropdown-items {
+            .nav-link {
+                background-color: $color-darkestgreen;
+                &:hover {
+                    background-color: $color-secondary;
+                }
+            }
+        }
+    }
+}
+
+.border-red{
+    border: 1px solid #a80000
+}
+.no-border-crm{
+    border: none
+}
+.totals-button {
+    margin-left: 10px;
+}
+
+.text-color-black{
+    color: $color-black;
+}
+.modal-content{
+  border-radius:10px;
+  border:0;
+}
+.modal-select-field{
+  width:100%;
+}
+.ng-p-input{
+    width:100%;
+}
+.ui-dropdown{
+    width:100% !important;
+}
+
+.alert-dangeralert{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+select{
+    height: 30px;
+    border-radius: 5px;
+}
+
+.font-size{
+   font-size: 14
+}
+
+.btn-fiter-margin-top{
+    margin-top: 23px !important;
+}
+
+/* modal ngx smart modal */
+.nsm-content{
+  margin:0 auto !important;
+  border-radius:5px !important;
+}
+
+/* modal ng prime */
+body .ui-dialog{
+  border-radius:5px !important;
+
+  .ui-dialog-titlebar{
+    border:0 !important;
+    border-radius:5px 5px 0 0 !important;
+  }
+  .ui-dialog-titlebar{
+    background-color:$color-fourth !important;
+  }
+  .ui-dialog-content{
+    border:0 !important;
+
+    textarea{
+      height: 250px !important;
+      overflow: auto !important;
+      box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    }
+  }
+  .ui-dialog-footer{
+    border:0 !important;
+    border-radius:0 0 5px 5px !important;
+  }
+}
+body .ui-widget{
+  font-size:12px !important;
+}
+.inline-label{
+  margin-right:10px;
+}
+.disabledExecutiveLostCustomer{
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.disabledExecutiveLostCustomerPointer{
+    pointer-events: none;
+}
+
+@media (min-width: 992px){
+    .form-group .form-group{
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 430px){
+
+    .map-btns{
+        button{
+            width:100% !important;
+            margin-bottom:10px !important;
+            margin-right:0 !important;
+        }
+    }
+}

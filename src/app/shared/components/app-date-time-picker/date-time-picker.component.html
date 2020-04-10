@@ -1,0 +1,32 @@
+<!-- <div class="form-group">
+    <div class="input-group">
+        <input class="form-control" placeholder="aaaa-mm-dd" name="dateModel" [(ngModel)]="dateModel" (ngModelChange)="changeDate($event)"
+            ngbDatepicker #d="ngbDatepicker">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                <img src="/assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+            </button>
+        </div>
+    </div>
+</div> -->
+
+
+    <div class="form-group">
+        <div class="input-group">
+            <input readonly class="form-control" [placeholder]="placeholder" name="date" [(ngModel)]="dateStruct" (ngModelChange)="updateDate()"
+                ngbDatepicker #datePicker="ngbDatepicker">
+            <!-- <div class="input-group-append" (click)="datePicker.toggle()">
+                <span class="input-group-text">
+                    <i class="fa fa-calendar"></i>
+                </span>
+            </div> -->
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="datePicker.toggle()" type="button">
+                    <img src="/assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+                </button>
+            </div>
+        </div>
+    </div>
+
+<!-- <ngb-timepicker [(ngModel)]="timeStruct" (ngModelChange)="updateTime()" [meridian]="true">
+</ngb-timepicker> -->

@@ -1,0 +1,61 @@
+<div class="card">
+  <a
+    #urlFileDownload
+    *ngIf="fileUrl != undefined"
+    id="downloadFile"
+    [href]="fileUrl"
+    download="{{ fileName }}"
+  ></a>
+  <div class="card-body">
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-md-6">
+          <span class="ui-float-label">
+            <input
+              id="float-input"
+              type="text"
+              size="30"
+              autocomplete="off"
+              pInputText
+              formControlName="IdentificationCard"
+            />
+            <label for="float-input">Número de documento</label>
+          </span>
+          <p
+            class="form-control-feedback"
+            *ngIf="
+              !form.controls['IdentificationCard'].valid &&
+              form.controls['IdentificationCard'].dirty
+            "
+          >
+            El documento es requerido
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p-fileUpload
+            #fileUpload
+            name="demo[]"
+            (uploadHandler)="myUploader($event)"
+            customUpload="true"
+            chooseLabel="Seleccionar archivo"
+            invalidFileTypeMessageSummary="Solo se permiten archivos .txt"
+            uploadLabel="Guardar"
+            cancelLabel="Cancelar"
+            accept=".txt"
+          >
+            <ng-template pTemplate="content">
+              <ul *ngIf="uploadedFiles.length" class="fa fa-file-text-o">
+                <li
+                  *ngFor="let file of uploadedFiles"
+                  class="fa fa-file-text-o"
+                >
+                  {{ file.name }} - {{ file.size }} bytes
+                </li>
+              </ul>
+            </ng-template>
+          </p-fileUpload>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

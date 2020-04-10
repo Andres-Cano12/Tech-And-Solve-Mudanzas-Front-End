@@ -1,0 +1,10 @@
+<div class="form-group">
+    <div class="input-group">
+        <input class="form-control" placeholder="aaaa-mm-dd" name="dateModel" [readonly] = "true"  [(ngModel)]="dateModel" (ngModelChange)="changeDate($event)" ngbDatepicker #d="ngbDatepicker">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" [disabled] = "disabled"  type="button">
+                <img src="/assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+            </button>
+        </div>
+    </div>
+</div>

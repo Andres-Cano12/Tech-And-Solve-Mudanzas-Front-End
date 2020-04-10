@@ -1,0 +1,57 @@
+<div class="login-form" >
+    <!-- <app-loader [isLoaded]="isLoaded" class="d-flex align-items-center"></app-loader> -->
+
+
+  <div *ngIf="isLoaded" class="login-form__fields">
+      <form [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+      <div class="form-group">
+
+        <div class="login-form__fields__title">
+          <label class="" for="email">Usuario</label>
+        </div>
+        <div class="login-form__fields__input">
+          <input class="" formControlName="userName" type="text"  id="userName" name="userName" placeholder="Nombre de usuario">
+        </div>
+
+        <div class="form-control-feedback" *ngIf="!loginForm.controls['userName'].valid && loginForm.controls['userName'].touched"> 
+          Por favor, ingresa tu nombre de usuario
+        </div>
+
+      </div>
+      <div class="form-group">
+
+        <div class="login-form__fields__title">
+          <label class="login-form__fields__title" for="password">Contraseña</label>
+        </div>
+        <div class="login-form__fields__input">
+          <input formControlName="password" class="login-form__fields__input" type="password" id="password" name="password" placeholder="Contraseña">
+        </div>
+
+        <div class="form-control-feedback" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched"> 
+          Por favor, ingresa tu contraseña
+        </div>
+      </div>
+
+      <div *ngIf="serviceError" class="alert alert-dangeralert">
+        {{ serviceError | json}}
+      </div>
+
+      <div class="form-group">
+        <div class="login-form__fields__input">
+          <!-- <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Ingresar</button> -->
+
+     <span *ngIf="!loginForm.valid" pTooltip="Diligencia los campos requeridos" tooltipPosition="top">
+            <button name=""  type="submit" [disabled]="!loginForm.valid" class="btn btn-primary" >Ingresar</button>
+    </span>
+        <span *ngIf="loginForm.valid">
+            <button name=""  type="submit" [disabled]="!loginForm.valid" class="btn btn-primary" >Ingresar</button>
+    </span>
+        </div>
+      </div>
+      <div class="form-group" style="float: right;">
+          <button pButton type="button" (click)="handleClick()" label="Registrarse" class="ui-button-success"></button>
+      </div>
+    </form>
+  </div>
+
+</div>

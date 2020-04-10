@@ -1,0 +1,138 @@
+@import "../../../../scss/_core-variables";
+
+.login-form{
+  @include flex;
+  justify-content: space-around;
+  position: absolute;
+  width:600px;
+  min-height: 300px;
+  top:50%;
+  left:50%;
+  margin-left:-300px;
+  margin-top:-150px;
+  background-color:$white;
+  border-radius:10px;
+  box-shadow:0 3px 20px rgba(0, 36, 73, 0.2);
+  border:2px solid $gray-100;
+  padding:20px;
+
+  &__logo{
+    width:40%;
+    padding:0 20px;
+    border-right:1px solid $gray-200;
+    display: flex;
+    justify-content: space-around;
+
+    img{
+      width:150px;
+      align-self: center;
+    }
+  }
+
+  &__fields{
+    width:60%;
+    padding-left:40px;
+    padding-top:20px;
+
+    &__title{
+
+      label{
+        color:$color-primary;
+        font-size:18px;
+        font-weight:light;
+        text-transform:uppercase;
+      }
+    }
+
+    &__input{
+
+      input{
+        border:none;
+        background-color: $gray-100;
+        padding:10px;
+        width:100%;
+      }
+
+      .blue-btn{
+        text-align: center;
+        font-weight:light;
+        width:100%;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__logos{
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding:5px 0 25px 0;
+  }
+}
+.btn-primary{
+    width:100%;
+    text-transform:uppercase;
+}
+
+// responsive
+@media (max-width: 1199.98px) {
+}
+
+@media (max-width: 991.98px) {
+
+}
+
+@media (max-width: 650px) {
+  .login-form{
+    width:90%;
+    margin-left: -45%;
+    height: auto;
+    margin-top:20px;
+    top: auto;
+
+    &__logo, &__fields{
+      width:100%;
+      border-right:none;
+    }
+
+    &__fields{
+      margin-top:20px;
+      padding-top:20px;
+      padding-left:0;
+      border-top:1px solid $gray-200;
+    }
+
+    &__logos{
+
+      img{
+        width:80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .login-form{
+
+    &__logo{
+
+      img{
+        width:100px;
+      }
+    }
+
+    &__fields{
+      margin-top:10px;
+      padding-top:10px;
+
+      .form-group{
+        margin-bottom:10px;
+      }
+
+      &__title{
+        margin-bottom:0;
+      }
+    }
+  }
+}

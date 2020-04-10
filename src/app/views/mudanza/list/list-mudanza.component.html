@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-sm-6">
+        <h3>
+            Listado de Mudanzas
+        </h3>
+    </div>
+    <div class="col-sm-6">
+        <div class="float-right">
+            <a routerLink="/mudanza/create" class="btn btn-primary">Cargar nueva mudanza</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="card ctn-table">
+        <div class="card-header">
+            <div class="float-left">
+            </div>
+            <div *ngIf="results" class="float-right text-total-list"> Total registros:
+                <strong>{{ results.totalItems }} </strong>
+            </div>
+        </div>
+        <div class="card-body animated fadeIn">
+            <a
+            #urlFileDownload
+            *ngIf="fileUrl != undefined"
+            id="downloadFile"
+            [href]="fileUrl"
+            download="{{fileName}}"
+          ></a>
+            <p-table #empleadoTable [columns]="cols" [value]="results.list" [paginator]="true" [rows]="10" [totalRecords]="totalRecords" selectionMode="single" dataKey="identificationCard" sortMode="multiple" [lazy]="true" (onLazyLoad)="loadLazy($event)">
+                <ng-template pTemplate="emptymessage" let-columns>
+                    <tr>
+                        <td [attr.colspan]="columns.length + 1">
+                            No se encontraron registros
+                        </td>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                            {{col.header}}
+                            <p-sortIcon [field]="col.field"></p-sortIcon>
+                        </th>
+                        <th>Acciones
+
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr [pSelectableRow]="rowData">
+                        <td *ngFor="let col of columns">
+                            <div *ngIf="col.field!=='state' ">
+                                {{rowData[col.field]}}
+                            </div>
+                        </td>
+                        <td>
+                            <button pButton pTooltip="Descargar archivo" tooltipPosition="top" icon="fa fa-download" class="ui-button-primary" (click)="getFile(rowData)" ></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

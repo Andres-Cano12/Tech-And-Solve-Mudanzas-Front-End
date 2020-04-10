@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="ui-inputgroup form-group">
+            <input
+                pInputText
+                id="pac-input"
+                type="text"
+                (keyup.enter)="locateAddressInMap(gmap.getMap())"
+                [(ngModel)]="addressValue"
+                [appValidatePermission]="permissions"
+                [formControl]="formGroup.controls['Address']"/>
+            <button 
+                pButton
+                type="button"
+                label="Buscar"
+                id="searchbutton"
+                (click)="locateAddressInMap(gmap.getMap())"
+                [appValidatePermission]="permissions">
+            </button>
+        </div>
+        <p
+            class="form-control-feedback"
+            *ngIf="!formGroup.controls['Address'].valid && (formGroup.controls['Address'].dirty || formGroup.controls['Address'].touched)">
+            El campo Dirección es requerido.
+            <br>
+        </p>
+        <p
+            class="form-control-feedback"
+            *ngIf="!hasValidLatitudeAndLongitude()">
+            Debe buscar la Dirección y agregar un pin en el mapa
+            <br>
+        </p>
+    </div>
+</div>
+
+<p-gmap 
+    #gmap 
+    [style]="{'width':'100%','height':'320px', 'margin-bottom': '1em'}" 
+    [options]="mapOptions"
+    [overlays]="overlays"
+    (onMapReady)="onMapReady($event)">
+</p-gmap>
+

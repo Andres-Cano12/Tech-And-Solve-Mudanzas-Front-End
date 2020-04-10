@@ -1,0 +1,46 @@
+<div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Filtrar</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" class="forms">
+                    <div class="row" *ngIf="camposFiltro.length == 0">
+                        <div class="col-md-12">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>¡Sin condiciones!</strong> Para utilizar el filtro, favor agregar una condición
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divCamposFiltro" *ngIf="camposFiltro.length >= 1">
+                        <div *ngFor="let item of camposFiltro; let i=index">
+                            <filtro-campo-component [item]="item" [responseFilterModel]="responseFilterModel" [index]="i" (deleted)="removeFilter($event)"></filtro-campo-component>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-secondary" (click)="addFilter()">Añadir condición</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-2">
+                    <select class="form-control" name="selectCountPage" [(ngModel)]="paginationModel.pageSize">
+                        <option *ngFor="let item of responseFilterModel.pageQuantityList" value="{{ item }}">{{ item }}</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="getAllFilter()">Buscar</button>
+            </div>
+        </div>
+    </div>
+</div>

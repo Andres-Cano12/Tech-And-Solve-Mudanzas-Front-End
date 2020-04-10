@@ -1,0 +1,50 @@
+@import "_bootstrap-variables";
+
+// core overrides
+$color-primary:#0c499c;
+$color-secondary:#0a88b0;
+$color-third:#9eddf1;
+$color-fourth:#d1f3fe;
+$color-darkgreen: #0a3063;
+$color-darkestgreen: #031a39;
+$color-links:#0a3063;
+$color-black: #000;
+$color-font: $gray-600;
+$color-h1: $color-primary;
+$color-h2: $color-secondary;
+$color-h3: $color-secondary;
+$color-h4: $color-secondary;
+$color-h5: $color-secondary;
+
+$azul01:                          #00a1df;
+$azul01-dark:                     #0075a2;
+$azul02:                          #004996;
+$azul03:                          #07325b;
+$amarillo-familia:                #f3ab34;
+$amarillo-familia-dark:           #d28e1c;
+$fucsia-familia:                  #e51587;
+$fucsia-familia-dark:             #b40766;
+$verde-familia:                   #79c252;
+$verde-familia-dark:              #3e7a1d;
+$red-familia:                     #D30D0D;
+$red-familia-dark:                #b50b0b;
+$morado-familia:                  #5b1a8f;
+
+// core overrides
+$sidebar-bg: $color-darkgreen;
+$border-card:#07325b;
+$backgroud-card-header: #07325b;
+$navbar-brand-logo-size: 90px auto;
+
+// radius
+$card-radius:10px;
+
+// shadow
+@mixin card-shadow {
+  box-shadow: 0 10px 10px rgba(0,0,0,.05);
+}
+
+@mixin flex{
+  display: flex;
+  flex-wrap: wrap;
+}

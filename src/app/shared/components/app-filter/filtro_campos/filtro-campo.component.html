@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-8 col-lg-3 form-group">
+        <label>Campo</label>
+        <select class="form-control" name="selectFiled" [(ngModel)]="item.propertyName" (ngModelChange)="changeOperator()">
+            <option value="">--Seleccionar--</option>
+            <option *ngFor="let item of responseFilterModel.filterList" value="{{ item.propertyName }}">{{ item.name }}</option>
+        </select>
+    </div>
+
+    <div class="col-md-8 col-lg-3 form-group">
+        <label>Condición</label>
+        <select class="form-control" name="selectCondicion" [(ngModel)]="item.operator">
+            <option value="">--Seleccionar--</option>
+            <option *ngFor="let item of conditionList" value="{{ item.id }}">{{ item.value }}</option>
+        </select>
+    </div>
+
+    <div class="col-md-8 col-lg-4 form-group">
+        <label>Parámetro de Búsqueda</label>
+        <input type="text" [(ngModel)]="item.value" class="form-control" name="parametro" placeholder="Parámetro de Búsqueda">
+    </div>
+
+    <div class="col-md-8 col-lg-2 align-items-end d-flex form-group">
+        <button type="button" class="form-control btn btn-danger" (click)="removeFilter(index)">Eliminar</button>
+    </div>
+</div>

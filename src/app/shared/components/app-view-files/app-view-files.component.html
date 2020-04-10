@@ -1,0 +1,50 @@
+<div class="row">
+    <div id="accordion" role="tablist" class="col-sm-12 col-md-12 col-lg-12" *ngIf="repositorioList?.length != 0">
+        <div class="card" *ngFor="let itemRepo of repositorioList; let index = index">
+            <div class="card-header" role="tab" id="heading-{{index}}">
+                <div class="float-left">
+                    <h5 class="mb-0">
+                        <a data-toggle="collapse" href="#collapse-{{index}}" aria-expanded="false" class="collapsed">
+                            {{itemRepo.tipoDocumento?.descripcion}} <i class="fa fa-chevron-down"></i>
+                        </a>
+                    </h5>
+                </div>
+                <div class="float-right text-total-list"> Total registros:
+                    <span class="badge badge-pill badge-secondary">
+                        <strong>{{itemRepo.repositorioDetalles?.length}}</strong>
+                    </span>
+                </div>
+            </div>
+            <div id="collapse-{{index}}" class="collapse" role="tabpanel" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="data-table">
+                        <table>
+                        <thead>
+                            <tr>
+                                <th>Descripción</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let itemDetalle of itemRepo.repositorioDetalles">
+                                <td class="text-field">{{itemDetalle.descripcion}}</td>
+                                <td>
+                                    <a href="{{s3Route}}/{{repositorioRequestModel.s3Module}}/{{itemRepo.tipoDocumento?.cleanDescripcion}}/{{itemDetalle.adjunto}}" target="_blank" class="btn btn-outline-secondary">Ver</a>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteRegisterModal" (click)="setIdRepository(itemDetalle.id, itemDetalle.adjunto)">Eliminar</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div *ngIf="repositorioList?.length == 0" class="alert alert-secondary alert-dismissible fade show" role="alert">
+            <strong>¡Sin información!</strong> No hay datos por mostrar.
+        </div>
+    </div>
+</div>
+
+<app-delete-register (deleteItem)="deleteRepository()"></app-delete-register>

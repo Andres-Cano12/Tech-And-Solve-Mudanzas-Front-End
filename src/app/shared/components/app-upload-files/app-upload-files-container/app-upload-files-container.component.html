@@ -1,0 +1,6 @@
+<div *ngIf="fileList?.length >= 1">
+    <div *ngFor="let item of fileList; let i=index">
+        <app-upload-files-fields [item]="item" [index]="i"  (deleted)="removeFiles($event)"></app-upload-files-fields>
+        <br>
+    </div>
+</div>
